@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans";
+}
+
+ul {
+    list-style-type: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 12px 0;
+}
+
+tr {
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+input {
+    border-radius: 5px;
+    padding-left: 16px;
+}
+
+input, select {
+    border: 1px solid #e7e7e7;
+    transition: border 0.3s linear;
+}
+
+input:focus, select:focus {
+    border: 1px solid #28b9b5;
+}
+
+input#description {
+    width: 300px;
+}
+
+tr:nth-child(2n) {
+    background-color: #f7f7f7;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.summary ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0px 10px;
+    margin: 12px 0px;
+}
+
+.summary {
+    padding: 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('back.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.summary h2 {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.summary__total {
+    font-size: 42px;
+}
+
+.summary__total-sign {
+    margin-right: 12px;
+}
+
+.summary__income-title {
+    color: #444;
+}
+
+.summary__income {
+    width: 400px;
+    text-transform: uppercase;
+    margin-top: 12px;
+}
+
+.summary__income-amount {
+    vertical-align: top;
+}
+
+.summary__income-percentage {
+    width: 32px;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 3px 0;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 11px;
+}
+
+.summary__income--income {
+    background-color: #28b9b5;
+}
+
+.summary__income--expense {
+    background-color: #ff5049;
+}
+
+.input-container {
+    background-color: #f7f7f7;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 50px;
+    padding: 20px 0;
+}
+
+.input-container > * {
+    margin: 0 10px;
+}
+
+.input-container__submit {
+    color: #28b9b5;
+    font-size: 32px;
+    display: flex !important;
+    align-items: center;
+}
+
+.input-container__submit::before {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.input-container__submit:hover::before {
+    transform: scale(1.35);
+}
+
+.balance-sheet {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    padding: 50px;
+}
+
+.balance-sheet__pane {
+    flex-basis: 40%;
+    padding-right: 32px;
+}
+
+.balance-sheet__title {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.green {
+    color: #28b9b5;
+}
+
+.red {
+    color: #ff5049;
+}
+
+.balance-sheet__title--income {
+    color: #28b9b5;
+}
+
+.balance-sheet__title--expenses {
+    color: #ff5049;
+}
+
+.balance-sheet__income-items {
+    width: 100%;
+}
+
+.balance-sheet__income-item {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.balance-sheet__income-item-percentage {
+    width: 32px;
+    display: inline-block;
+    background-color: #FFDAD9;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 11px;
+    padding: 3px 0;
+}
+
+.anim-container {
+    transition: transform 0.3s;
+    display: inline-block;
+}
+
+.balance-sheet__income-item:hover .anim-container {
+    transform: translateX(-40px);
+}
+
+.btn-delete:hover {
+    cursor: pointer;
+}
