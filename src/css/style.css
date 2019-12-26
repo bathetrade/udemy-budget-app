@@ -202,7 +202,19 @@ tr:nth-child(2n) {
 }
 
 .balance-sheet__income-item:hover .anim-container {
-    transform: translateX(-40px);
+    transform: translateX(-10px) scale(1.1);
+}
+
+.btn-delete {
+    /* display: none; */
+    transform: translateX(80px);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.balance-sheet__income-item:hover .btn-delete {
+    transform: none;
+    opacity: 1.0;
 }
 
 .btn-delete:hover {
