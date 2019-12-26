@@ -18,7 +18,7 @@
             <ul>
                 <li class="summary__income-title">Income</li>
                 <li class="summary__income-amount-container">
-                    <span class="summary__income-amount">+0.00</span>
+                    <span id='summary__income-amount-income' class="summary__income-amount">+0.00</span>
                     <span class="summary__income-percentage invisible"></span>
                 </li>
             </ul>
@@ -27,8 +27,8 @@
             <ul>
                 <li class="summary__income-title">Expenses</li>
                 <li class="summary__income-amount-container">
-                    <span class="summary__income-amount">-0.00</span>
-                    <span class="summary__income-percentage">---</span>
+                    <span id='summary__income-amount-expenses' class="summary__income-amount">-0.00</span>
+                    <span id='summary__expenses-percentage' class="summary__income-percentage">---</span>
                 </li>
             </ul>
         </div>
@@ -40,36 +40,18 @@
         </select>
         <input type="text" name="description" id="description" placeholder="Add description">
         <input type="number" name="amount" id="amount" placeholder="Value">
-        <i class="input-container__submit far fa-check-circle"></i>
+        <i id="input-container__submit" class="input-container__submit far fa-check-circle"></i>
     </div>
     <div class="balance-sheet">
         <div class="balance-sheet__pane">
             <div class="balance-sheet__title green">Income</div>
-            <table class="balance-sheet__income-items">
+            <table id="balance-sheet__income-table" class="balance-sheet__income-items">
                 <tbody>
                     <tr>
                         <td class="balance-sheet__income-item">
                             <span class="balance-sheet__income-item-description">Test</span>
                             <span class="balance-sheet__income-item-amount green">
-                                <span class="anim-container">+100.0</span>
-                                <i class="btn-delete far fa-times-circle"></i>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="balance-sheet__income-item">
-                            <span class="balance-sheet__income-item-description">Test</span>
-                            <span class="balance-sheet__income-item-amount green">
-                                <span class="anim-container">+100.0</span>
-                                <i class="btn-delete far fa-times-circle"></i>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="balance-sheet__income-item">
-                            <span class="balance-sheet__income-item-description">Test</span>
-                            <span class="balance-sheet__income-item-amount green">
-                                <span class="anim-container">+100.0</span>
+                                <span class="anim-container"><span class='balance-sheet__income-value'>+100.0</span></span>
                                 <i class="btn-delete far fa-times-circle"></i>
                             </span>
                         </td>
@@ -79,22 +61,22 @@
         </div>
         <div class="balance-sheet__pane">
             <div class="balance-sheet__title red">Expenses</div>
-            <table class="balance-sheet__income-items">
-                    <tbody>
-                        <tr>
-                            <td class="balance-sheet__income-item">
-                                <span class="balance-sheet__income-item-description">Test</span>
-                                <span class="balance-sheet__income-item-amount red">
-                                    <span class="anim-container">
-                                        -100.0
-                                        <span class="balance-sheet__income-item-percentage">2%</span>
-                                    </span>
-                                    <i class="btn-delete far fa-times-circle"></i>
+            <table id='balance-sheet__expenses-table' class="balance-sheet__income-items">
+                <tbody>
+                    <tr>
+                        <td class="balance-sheet__income-item">
+                            <span class="balance-sheet__income-item-description">Test</span>
+                            <span class="balance-sheet__income-item-amount red">
+                                <span class="anim-container">
+                                    <span class='balance-sheet__income-value'>-100.0</span>
+                                    <span class="balance-sheet__income-item-percentage">2%</span>
                                 </span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                                <i class="btn-delete far fa-times-circle"></i>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <script src="dist/js/app.js"></script>

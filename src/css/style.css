@@ -57,7 +57,7 @@ tr:nth-child(2n) {
 
 .summary {
     padding: 20px;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('back.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../dist/img/back.png');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;

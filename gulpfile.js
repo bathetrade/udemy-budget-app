@@ -27,9 +27,14 @@ gulp.task('css', async () => {
     .pipe(gulp.dest('dist/css'))
 });
 
+gulp.task('static', async() => {
+    gulp.src('src/img/**')
+    .pipe(gulp.dest('dist/img'))
+});
+
 gulp.task('default',
     gulp.series('clean',
-    gulp.parallel('js', 'css')));
+    gulp.parallel('js', 'css', 'static')));
 
 gulp.task('watch', async () => {
     gulp.watch('src/**', gulp.series('default'));
