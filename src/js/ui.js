@@ -21,7 +21,8 @@ let selectors = {
     balanceSheet: {
         incomeTable: 'balance-sheet__income-table',
         expensesTable: 'balance-sheet__expenses-table',
-        deleteButtons: 'btn-delete'
+        deleteButtons: 'btn-delete',
+        td: 'balance-sheet__income-item'
     }
 };
 
@@ -52,4 +53,70 @@ let els = {
     }
 }
 
-export default els;
+function setIncomeOrExpenseTotal(amount, el) {
+    el.innerHTML = getAmountString(amount);
+}
+
+function getAmountString(amount) {
+    return (amount >= 0 ? '+' : '') + amount;
+}
+
+function addTableRow(description, amount, percentage) {
+    let table = els.balanceSheet.incomeTable;
+
+    let isExpense = amount < 0;
+    if (isExpense) {
+        table = els.balanceSheet.expensesTable;
+    }
+
+    var tbody = table.tBodies[0];
+    var row = tbody.insertRow();
+    var cell = row.insertCell();
+
+    cell.classList.add(selectors.balanceSheet.td);
+
+    let color = isExpense ? 'red' : 'green';
+
+    let percentageSpan = '';
+    if (isExpense) {
+        percentageSpan = `<span class='balance-sheet__income-item-percentage'>${percentage}%</span>`;
+    }
+
+    cell.innerHTML = `
+    <span class="balance-sheet__income-item-description">${description}</span>
+    <span class="balance-sheet__income-item-amount ${color}">
+        <span class="anim-container">
+            <span class='balance-sheet__income-value'>${getAmountString(amount)}</span>
+            ${percentageSpan}
+        </span>
+        <i class="btn-delete far fa-times-circle"></i>
+    </span>
+    `;
+}
+
+let ui = {
+    totals: {
+        setTotal(amount) {
+            let sign = '+';
+            if (amount < 0) {
+                sign = '-';
+            }
+            els.totals.totalSign.innerHTML = sign;
+            els.totals.totalValue.innerHTML = amount;
+        },
+
+        setIncomeTotal(amount) {
+            setIncomeOrExpenseTotal(els.totals.income.amount);
+        },
+
+        setExpenseTotal(amount) {
+            setIncomeOrExpenseTotal(els.totals.expenses.amount);
+        }
+    },
+
+    balanceSheet: {
+        addTableRow
+    }
+};
+
+export default ui;
